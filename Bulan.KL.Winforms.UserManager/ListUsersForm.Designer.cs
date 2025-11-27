@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             label5 = new Label();
-            dataGridView1 = new DataGridView();
             btnNew = new Button();
             btnView = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dgvViewUsers = new DataGridView();
+            btnRefreshQ1QAZ = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvViewUsers).BeginInit();
             SuspendLayout();
             // 
             // label5
@@ -45,15 +46,6 @@
             label5.TabIndex = 16;
             label5.Text = "LIST OF USERS";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = SystemColors.Info;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 44);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(402, 281);
-            dataGridView1.TabIndex = 17;
-            // 
             // btnNew
             // 
             btnNew.BackColor = SystemColors.GradientActiveCaption;
@@ -64,6 +56,7 @@
             btnNew.TabIndex = 18;
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = false;
+            btnNew.Click += btnNew_Click;
             // 
             // btnView
             // 
@@ -76,18 +69,40 @@
             btnView.Text = "View";
             btnView.UseVisualStyleBackColor = false;
             // 
+            // dgvViewUsers
+            // 
+            dgvViewUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvViewUsers.Location = new Point(12, 44);
+            dgvViewUsers.Name = "dgvViewUsers";
+            dgvViewUsers.Size = new Size(402, 281);
+            dgvViewUsers.TabIndex = 20;
+            // 
+            // btnRefreshQ1QAZ
+            // 
+            btnRefreshQ1QAZ.BackColor = SystemColors.Control;
+            btnRefreshQ1QAZ.BackgroundImage = Properties.Resources.images1;
+            btnRefreshQ1QAZ.BackgroundImageLayout = ImageLayout.Zoom;
+            btnRefreshQ1QAZ.Font = new Font("Segoe UI", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnRefreshQ1QAZ.Location = new Point(233, 3);
+            btnRefreshQ1QAZ.Name = "btnRefreshQ1QAZ";
+            btnRefreshQ1QAZ.Size = new Size(40, 38);
+            btnRefreshQ1QAZ.TabIndex = 21;
+            btnRefreshQ1QAZ.UseVisualStyleBackColor = false;
+            // 
             // ListUsersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(436, 416);
+            Controls.Add(btnRefreshQ1QAZ);
+            Controls.Add(dgvViewUsers);
             Controls.Add(btnView);
             Controls.Add(btnNew);
-            Controls.Add(dataGridView1);
             Controls.Add(label5);
             Name = "ListUsersForm";
             Text = "List Users Forms";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += ListUsersForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvViewUsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -95,8 +110,9 @@
         #endregion
 
         private Label label5;
-        private DataGridView dataGridView1;
         private Button btnNew;
         private Button btnView;
+        private DataGridView dgvViewUsers;
+        private Button btnRefreshQ1QAZ;
     }
 }

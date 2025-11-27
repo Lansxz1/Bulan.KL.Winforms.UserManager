@@ -3,19 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite;
 
 namespace Bulan.KL.Winforms.UserManager
 {
     public class User
     {
-        public User(string fullname, string username, string password)
-        {
-            this.FullName = fullname;
-            this.Username = username;   
-            this.Password = password;
-
-        }
-        
+       
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string FullName { get; set; }
         public string Username { get; set; }    

@@ -19,13 +19,20 @@ namespace Bulan.KL.Winforms.UserManager
             }
             else
             {
-                User userToSave = new User(fullname, username, password);
+                User userToSave = new User();
+                userToSave.FullName = fullname;
+                userToSave.Username = username;
+                userToSave.Password = password;
                 UserRepository repository = new UserRepository();
                 bool isSaved = repository.Add(userToSave);
 
                 if (isSaved)
                 {
                     MessageBox.Show("User Saved!","Sucessful!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tbFullName.Clear();
+                    tbUserName.Clear();
+                    tbPassword.Clear();
+                    
                 }
             }
         }
